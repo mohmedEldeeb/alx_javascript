@@ -1,4 +1,7 @@
-#!/usr/bin/node
-for (const x of ['C is fun', 'Python is cool', 'JavaScript is amazing']) {
-  console.log(x);
+//  #!/usr/bin/node
+const x = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const xLeng = x.length;
+
+for (let i = 0; i < xLeng; i++) {
+  console.log(x[i]);
 }
