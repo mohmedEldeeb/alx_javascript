@@ -18,7 +18,7 @@ class Rectangle {
         this.width = this.width * 2;
     }
     repeat(){
-        r = this.height;
+        const r = this.height;
         this.height = this.width
         this.width = r
     }
