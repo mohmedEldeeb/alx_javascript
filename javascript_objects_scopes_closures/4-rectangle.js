@@ -19,8 +19,8 @@ class Rectangle {
     }
     repeat(){
         r = this.height;
-        this.width = this.height
-        this.height = r
+        this.height = this.width
+        this.width = r
     }
     
 }
