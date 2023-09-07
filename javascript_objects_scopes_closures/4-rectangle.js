@@ -21,9 +21,7 @@ class Rectangle {
     }
     // Methods repeat
     repeat(){
-        const r = this.height;
-        this.height = this.width
-        this.width = r
+        [this.width, this.height] = [this.height, this.width];
     }
     
 }
