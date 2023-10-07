@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Login to the website</h1>
+        <div>
+            <form onsubmit="setCookies()">
+                <input type="text" id="firstname" name="name">
+                <input type="email" id="email" name="email">
+                <input type="submit" value="log me in">
+            </form>
+        </div>
+        <div>
+            <h1>Cookies</h1>
+            <button onclick="showCookies()"> Show the cookies</button>
+        </div>
+    </div>
+    <script>
+        function showCookies() {
+            const cookies = document.cookie.split('; ')
+            // create DOM element p
+            const elemP = document.createElement("p");
+            let cookieText = "Cookies: ";
+            for (const cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.split('=');
+                cookieText += `${cookieName}=${cookieValue}; `;
+            }
+            elemP.innerText = cookieText;
+            document.body.appendChild(elemP);
+        }
+        function getCookie(name) {
+            // to get cookes
+            const cookies = document.cookie.split('; ')
+            for (const cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.split('=');
+                if (cookieName == name) {
+                    return cookieValue;
+                }
+            }
+            return "";
+        }
+        function setCookies() {
+            const fName = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+            // set cookies
+            let date = new Date();
+            date.setDate(date.getDate() + 10);
+
+            document.cookie = `email=${email}; expires=${date.toUTCString()}; path=/`;
+            document.cookie = `firstname=${fName}; expires=${date.toUTCString()}; path=/`;
+        }
+
+        
+    </script>
+</body>
+</html>                
